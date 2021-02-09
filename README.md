@@ -3,6 +3,8 @@ This small collection of utils can simplify common admin tasks to help orchestra
 a new validator in support of the forthcoming Regen Network ledger. When nature 
 hangs in the balance, there's not time to lose =)
 
+![Aplikigo Testnet](./aplikigo.jpg)
+
 # What's here
 ## Regen Service
 Utils to install, uninstall, start, and stop
