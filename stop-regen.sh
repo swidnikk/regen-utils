@@ -8,3 +8,5 @@ exec &> >(tee -a "$LOG_FILE")
 echo [$(date -u)]
 echo Stopping Regen Service...
 sudo systemctl stop regen.service
+sudo systemctl status regen.service
+echo Done.

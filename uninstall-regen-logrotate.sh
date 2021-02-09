@@ -5,9 +5,10 @@ LOG_FILE=$LOG_PATH/regen-utils.log
 
 exec &> >(tee -a "$LOG_FILE")
 
-mkdir -p $LOG_PATH
 echo [$(date -u)]
-echo ...Starting Regen Service
-sudo systemctl start regen.service
-sudo systemctl status regen.service
+echo ... Uninstalling Regen Log Rotation and Crontab
+
+sudo rm /etc/logrotate.d/regen
+sudo rm /etc/cron.d/regen
+
 echo Done.

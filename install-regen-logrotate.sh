@@ -7,7 +7,8 @@ exec &> >(tee -a "$LOG_FILE")
 
 echo [$(date -u)]
 echo ... Installing Regen Log Rotation and Crontab
-sudo cp /home/ubuntu/code/regen-utils/logrotate-regen.conf /etc/logrotate.d/regen
+sudo cp /home/ubuntu/code/regen-utils/regen.logrotate /etc/logrotate.d/regen
 sudo bash -c "echo '* * * * * * ubuntu sudo logrotate -f /etc/logrotate.d/regen' > /etc/cron.d/regen"
 
-echo Regen Log Rotation installed and will rotate each minute
+echo Log rotation will run every minute
+echo Done.
