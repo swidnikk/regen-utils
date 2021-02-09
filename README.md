@@ -1,7 +1,7 @@
 # Regen Utils
 This small collection of utils can simplify common admin tasks to help orchestrate 
 a new validator in support of the forthcoming Regen Network ledger. When nature 
-hangs in the balance, there's not time to lose =)
+hangs in the balance, there's not a moment to lose =)
 
 # What's here
 ## Regen Service
