@@ -3,6 +3,8 @@ This small collection of utils can simplify common admin tasks to help orchestra
 a new validator in support of the forthcoming Regen Network ledger. When nature 
 hangs in the balance, there's not a moment to lose =)
 
+For full context please be sure to checkout https://github.com/regen-network/testnets/ and https://blockscape-network.medium.com/here-we-aplikigo-bb468d242bc1 and then keep reading below.
+
 ![Aplikigo Testnet](./aplikigo.jpg)
 
 # What's here
