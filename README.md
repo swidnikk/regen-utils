@@ -1,7 +1,7 @@
 # Regen Utils
 This small collection of utils can simplify common admin tasks to help orchestrate 
 a new validator in support of the forthcoming Regen Network ledger. When nature 
-hangs in the balance, there's not time to lose =)
+hangs in the balance, there's not a moment to lose =)
 
 ![Aplikigo Testnet](./aplikigo.jpg)
 
@@ -11,7 +11,7 @@ Utils to install, uninstall, start, and stop
 
 ## Regen Logs
 Utils to install and uninstall config files to rotate your validator logs via a 
-crontab every minute. 
+crontab every so often. 
 
 # Testing and Requirements
 - These utils were tested on a fresh Ubuntu 20.04 server running on AWS 
@@ -23,12 +23,15 @@ from `init-server.log` and run them as you see fit. After you are done, you'll h
 fresh validator with regen binaries on your path. 
 
 Install the regen service, 
+
 1. `> bash regen-utils/install-regen.sh`
 
 Install log rotation,
+
 2. `> bash regen-utils/install-regen-logrotate.sh`
 
 Start the service
+
 3. `> bash regen-utils/start-regen.sh`
 
 # Future Ideas
