@@ -1,0 +1,22 @@
+[Unit]
+Description=xrnd service
+After=network.target
+After=systemd-user-sessions.service
+After=network-online.target
+
+[Service]
+User=ubuntu
+group=ubuntu
+Type=forking
+ExecStart=/home/ubuntu/code/xrnd/bin/start-xrnd.sh
+#ExecStop=/home/ubuntu/bin/stop-xrnd.sh
+#StandardOutput=file:/var/log/xrnd/xrnd.log
+#StandardError=file:/var/log/xrnd/xrnd_error.log
+TimeoutSec=30
+Restart=always
+RestartSec=3
+StartLimitInterval=350
+StartLimitBurst=10
+
+[Install]
+WantedBy=multi-user.target

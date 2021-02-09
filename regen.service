@@ -1,0 +1,21 @@
+[Unit]
+Description=Regen Node Service
+After=network.target
+After=network-online.target
+After=systemd-user-sessions.service
+[Service]
+User=ubuntu
+Group=ubuntu
+Type=forking
+# see https://www.freedesktop.org/software/systemd/man/systemd.service.html
+ExecStart=/home/ubuntu/code/go/bin/regen start
+ExecStop=/home/ubuntu/code/regen-utils/stop-regen.sh
+StandardOutput=file:/home/ubuntu/var/log/regen/regen-node.log
+StandardError=file:/home/ubuntu/var/log/regen/regen-error.log
+Restart=always
+RestartSec=3
+StartLimitInterval=350
+StartLimitBurst=10
+LimitNOFILE=4096
+[Install]
+WantedBy=multi-user.target
