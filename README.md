@@ -21,12 +21,15 @@ from `init-server.log` and run them as you see fit. After you are done, you'll h
 fresh validator with regen binaries on your path. 
 
 Install the regen service, 
+
 1. `> bash regen-utils/install-regen.sh`
 
 Install log rotation,
+
 2. `> bash regen-utils/install-regen-logrotate.sh`
 
 Start the service
+
 3. `> bash regen-utils/start-regen.sh`
 
 # Future Ideas
