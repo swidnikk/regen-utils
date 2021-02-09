@@ -1,0 +1,55 @@
+#!/bin/bash
+
+sudo mkdir -p ~/logs/regen
+
+# Update fresh node
+sudo reboot
+
+# update sshd
+sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config
+sudo bash -c 'cat >> /etc/ssh/sshd_config' << EOF
+Port %SECRET_PORT%
+EOF
+sudo systemctl restart ssh
+
+# must allow all outbound traffic
+sudo apt-get update -y
+sudo apt-get install --only-upgrade -y linux-aws
+sudo apt-get install linux-aws
+sudo reboot
+sudo apt-get upgrade
+
+# mount ebs volume for setup 
+sudo lsblk -o +UUID >> ~/logs/mountfs.log #TODO save UUID to variable
+sudo file -s /dev/nvme1n1 >> ~/logs/mountfs.log
+
+# format ebs NEW VOLUMES ONLY!
+sudo mkfs -t xfs /dev/nvme1n1
+sudo mkdir -p /srv/home
+sudo mount /dev/nvme1n1 /srv/home
+
+# Copy /home
+sudo cp -aR /home/* /srv/home/
+sudo umount /srv/home
+
+# Mount to /home
+sudo mount /dev/nvme1n1 /home
+
+# mount ebs volume over /home
+# note, to unmount, update fstab and restart
+sudo cp /etc/fstab /etc/fstab.bak
+sudo bash -c 'cat >> /etc/fstab' << EOF
+UUID=%ADD_UUID_HERE%  /home/  xfs  defaults,nofail  0  2
+EOF
+sudo mount -a
+
+# node setup refer to https://github.com/regen-network/testnets for latest
+sudo apt-get install build-essential jq
+
+mkdir ~/regen-setup
+cd ~/regen-setup
+wget https://raw.githubusercontent.com/jim380/node_tooling/master/cosmos/scripts/go_install.sh
+chmod +x go_install.sh
+./go_install.sh -v 1.15.5
+go version >> setup.log
+
