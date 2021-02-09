@@ -9,7 +9,7 @@ Utils to install, uninstall, start, and stop
 
 ## Regen Logs
 Utils to install and uninstall config files to rotate your validator logs via a 
-crontab every minute. 
+crontab every so often. 
 
 # Testing and Requirements
 - These utils were tested on a fresh Ubuntu 20.04 server running on AWS 
