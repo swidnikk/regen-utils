@@ -16,8 +16,8 @@ Utils to install and uninstall config files to rotate your validator logs via a
 crontab every so often. 
 
 # Testing and Requirements
-- These utils were tested on a fresh Ubuntu 20.04 server running on AWS 
-- 200GB EBS volume with multi-attach support was mounted at /home for easy future upgrades 
+- These utils were tested on a fresh Ubuntu 20.04 server running 
+- 200GB NAS volume with multi-attach support was mounted at /home for easy future upgrades 
 
 # Getting Started
 Clone this repo on your remote host and open a terminal. Next review and run the commands 
