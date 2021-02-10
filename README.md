@@ -26,15 +26,28 @@ fresh validator with regen binaries on your path.
 
 Install the regen service, 
 
-1. `> bash regen-utils/install-regen.sh`
+1. `./regen-utils/install-regen.sh`
 
 Install log rotation,
 
-2. `> bash regen-utils/install-regen-logrotate.sh`
+2. `./regen-utils/install-regen-logrotate.sh`
 
 Start the service
 
-3. `> bash regen-utils/start-regen.sh`
+3. `./bash regen-utils/start-regen.sh`
+
+Stop the service
+
+4. `./bash regen-utils/start-regen.sh`
+
+Uninstall the regen service, 
+
+5. `./regen-utils/uninstall-regen.sh`
+
+Install log rotation,
+
+6. `./regen-utils/uninstall-regen-logrotate.sh`
+
 
 # Future Ideas
 - add support for Chef 
