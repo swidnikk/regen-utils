@@ -20,9 +20,12 @@ crontab every so often.
 - 200GB NAS volume with multi-attach support was mounted at /home for easy future upgrades 
 
 # Getting Started
-Clone this repo on your remote host and open a terminal. Next review and run the commands 
-from `init-server.log` and run them as you see fit. After you are done, you'll have a 
-fresh validator with regen binaries on your path. 
+Clone this repo on your remote host and open a terminal. Next review and run the commands, as you see fit 
+from `init-server.log`. After you are done, you'll have a fresh validator with regen binaries on your path. 
+
+Note that the `init-server.log` includes commands to init and mount a fresh NAS device at `/home`. To make
+your server cloud native, consider abstracting all dependencies from your node so they can be injected via
+a custom service. 
 
 Install the regen service, 
 
@@ -53,5 +56,6 @@ Install log rotation,
 - add support for Chef 
 - add support for Puppet
 - add support for a K8 buildpack
+- add support for cloud native encapsultation
 
 "Discover Possible"
