@@ -47,7 +47,7 @@ Uninstall the regen service,
 
 5. `./regen-utils/uninstall-regen.sh`
 
-Install log rotation,
+Uninstall log rotation,
 
 6. `./regen-utils/uninstall-regen-logrotate.sh`
 
