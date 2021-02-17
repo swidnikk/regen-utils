@@ -1,0 +1,16 @@
+[Unit]
+Description=Regen Validaotr - Cosmovisor
+After=network-online.target
+[Service]
+User=ubuntu
+Environment=DAEMON_NAME=regen
+Environment=DAEMON_RESTART_AFTER_UPGRADE=true
+Environment=DAEMON_HOME=/home/ubuntu/.regen
+ExecStart=/home/ubuntu/code/go/bin/cosmovisor start
+Restart=always
+RestartSec=3
+LimitNOFILE=4096
+SyslogIdentifier=regen-cosmovisor
+[Install]
+WantedBy=multi-user.target
+
