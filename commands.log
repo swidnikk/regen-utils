@@ -1,0 +1,12 @@
+#!/bin/bash
+
+FROM="${FROM:-0xmine}"
+TO="${TO:-0xyours}"
+AMT="${AMT:-10000utree}"
+FEES="${FEES:-2000utree}"
+CHAIN="${CHAIN:-aplikigo-1}"
+VALIDATOR="${VALIDATOR:-valoper}"
+
+echo regen tx bank send $FROM $TO $AMT --gas auto -y --fees=$FEES --chain-id $CHAIN
+
+echo regen tx staking delegate $VALIDATOR $AMT --gas auto -y --fees=$FEES --chain-id $CHAIN --from $FROM

@@ -6,8 +6,8 @@ LOG_FILE=$LOG_PATH/regen-utils.log
 exec &> >(tee -a "$LOG_FILE")
 
 echo [$(date -u)]
-echo ... Removing Regen Log Rotate
-sudo rm /etc/logrotate.d/regen
+#echo ... Removing Regen Log Rotate
+#sudo rm /etc/logrotate.d/regen
 
 echo ... Removing Regen Service
 sudo systemctl stop regen.service

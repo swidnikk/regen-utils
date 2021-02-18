@@ -1,0 +1,15 @@
+/home/ubuntu/logs/regen/*.log {
+    su ubuntu ubuntu
+    hourly
+    create 0644 ubuntu ubuntu
+    rotate 5
+    dateext
+    dateformat -%Y%m%d%H-%s
+    size=1M
+    notifempty
+    copytruncate
+    postrotate
+	echo [$(date -u)] >> /home/ubuntu/logs/regen/regen-utils.log
+	echo "Regen Cosmovisor log $1 rotated" >> /home/ubuntu/logs/regen/regen-utils.log
+    endscript
+}
