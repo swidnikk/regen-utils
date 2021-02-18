@@ -11,4 +11,10 @@ echo ... Uninstalling Regen Cosmovisor Log Rotation and Crontab
 sudo rm /etc/logrotate.d/cosmovisor
 sudo rm /etc/cron.d/cosmovisor
 
+echo "> ls -la /etc/crond.d | grep cosmovisor"
+ls /etc/cron.d/ | grep cosmovisor
+
+echo "> ls -la /etc/logrotate.d | grep regen"
+ls /etc/logrotate.d/ | grep cosmovisor
+
 echo Done.
