@@ -8,7 +8,7 @@ exec &> >(tee -a "$LOG_FILE")
 echo [$(date -u)]
 echo ... Installing Regen Cosmovisor Log Rotation and Crontab
 sudo cp /home/ubuntu/code/regen-utils/cosmovisor.logrotate /etc/logrotate.d/cosmovisor
-sudo bash -c "echo '* * * * * * ubuntu sudo logrotate -f /etc/logrotate.d/cosmovisor' > /etc/cron.d/cosmovisor"
+sudo bash -c "echo '* * * * * ubuntu sudo logrotate -f /etc/logrotate.d/cosmovisor' > /etc/cron.d/cosmovisor"
 
 echo "> ls -la /etc/crond.d | grep cosmovisor"
 ls /etc/cron.d/ | grep cosmovisor
