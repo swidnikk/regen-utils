@@ -1,10 +1,10 @@
-/home/ubuntu/logs/regen/*.log {
+/home/ubuntu/logs/regen/regen.log {
     su ubuntu ubuntu
     hourly
     create 0644 ubuntu ubuntu
     rotate 5
     dateext
-    dateformat -%Y%m%d%H-%s
+    dateformat _%Y%m%d%H_%s
     size=1M
     notifempty
     copytruncate
