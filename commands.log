@@ -10,3 +10,6 @@ VALIDATOR="${VALIDATOR:-valoper}"
 echo regen tx bank send $FROM $TO $AMT --gas auto -y --fees=$FEES --chain-id $CHAIN
 
 echo regen tx staking delegate $VALIDATOR $AMT --gas auto -y --fees=$FEES --chain-id $CHAIN --from $FROM
+
+# tail logs
+sudo journalctl -u cosmovisor -f
