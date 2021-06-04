@@ -1,12 +1,18 @@
 #!/bin/bash
 
+IDENTITY="${IDENTITY-3E277066462D89EE}"
+MONIKER="${MONIKER-swidnikk}"
+CHAIN="${CHAIN-regen-1}"
+FROM="${FROM-regen1y4rzzrgl66eyhzt6gse2k7ej3zgwmnger7pa24}"
+FEES="${FEES-1000uregen}"
+
 regen tx staking edit-validator \
-  --identity="3E277066462D89EE" \
+  --identity="$IDENTITY" \
   --details="Discover Possible" \
   --moniker=$MONIKER \
-  --chain-id=aplikigo-1 \
+  --chain-id=$CHAIN \
   --gas=auto \
-  --fees=4000utree \
-  --from=$REGEN_WALLET \
+  --fees=$FEES \
+  --from=$FROM \
   --log_format="json"
 
