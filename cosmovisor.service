@@ -2,26 +2,23 @@
 Description=Cosmovisor Service
 After=network-online.target
 # After=systemd-user-sessions.service
+StartLimitIntervalSec=0
 [Service]
 Environment="DAEMON_NAME=regen"
-Environment="DAEMON_HOME=${HOME}/.regen"
+Environment="DAEMON_HOME=/home/ubuntu/.regen"
 Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
 Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=false"
-User=${USER}
-Group=${USER}
-ExecStart=${GOBIN}/cosmovisor start
-PIDFile=/var/run/cosmovisor.pid
+User=ubuntu
+Group=ubuntu
+ExecStart=/home/ubuntu/code/go/bin/cosmovisor start
+PIDFile=/home/ubuntu/.regen/cosmovisor.pid
 ExecStop=/bin/kill -s SIGKILL $MAINPID
 SuccessExitStatus=SIGKILL
-StandardOutput=append:${HOME}/logs/regen/regen.log
-StandardError=append:${HOME}/logs/regen/regen.log
+StandardOutput=append:/home/ubuntu/logs/regen/regen.log
+StandardError=append:/home/ubuntu/logs/regen/regen.log
 Restart=always
 RestartSec=3
 LimitNOFILE=4096
-StartLimitInterval=350
-StartLimitBurst=10
-SyslogIdentifier=regen-cosmovisor
+SyslogIdentifier=cosmovisor
 [Install]
 WantedBy=multi-user.target
-
-
